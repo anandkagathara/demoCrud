@@ -1,0 +1,259 @@
+{
+	"info": {
+		"_postman_id": "2a939f5d-eef7-4202-b019-4613ebeb43a3",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21549127"
+	},
+	"item": [
+		{
+			"name": "signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\" : \"anand1\",\r\n    \"first_name\":\"Anand\",\r\n    \"last_name\": \"Kagathara\",\r\n    \"email\":\"anand1@yopmail.com\",\r\n    \"password\":\"Anand@123\",\r\n    \"roles\":[\"admin\"]\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:2700/api/auth/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2700",
+					"path": [
+						"api",
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"anand1\",\r\n    \"password\":\"Anand@123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:2700/api/auth/signin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2700",
+					"path": [
+						"api",
+						"auth",
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "public View",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:2700/api/test/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2700",
+					"path": [
+						"api",
+						"test",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllUsers",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZjFiNmRmNjI4NTliMzc2NDc1YTdmZCIsImlhdCI6MTY3Njc4Njg0NSwiZXhwIjoxNjc2ODczMjQ1fQ.54yk3Iw9lU0_6DLLihPqqHi_-fC8_n4iX0LqDHV41Kw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:2700/api/test/user",
+					"host": [
+						"localhost"
+					],
+					"port": "2700",
+					"path": [
+						"api",
+						"test",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "seeUser Content",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZjFiNmRmNjI4NTliMzc2NDc1YTdmZCIsImlhdCI6MTY3Njc4Njg0NSwiZXhwIjoxNjc2ODczMjQ1fQ.54yk3Iw9lU0_6DLLihPqqHi_-fC8_n4iX0LqDHV41Kw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:2700/api/test/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2700",
+					"path": [
+						"api",
+						"test",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "seeAdmin Content",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "addTokenTo",
+							"value": "queryParams",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZjFjNTg0NjI4NTliMzc2NDc1YTgyYSIsImlhdCI6MTY3Njc4OTEyOSwiZXhwIjoxNjc2ODc1NTI5fQ.-vglijXZFdts5Ei34-v08d0kCepVdbv6st_YU8y3lU0",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:2700/api/test/admin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2700",
+					"path": [
+						"api",
+						"test",
+						"admin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateAll Lastname",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:2700/api/test/updateAll",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2700",
+					"path": [
+						"api",
+						"test",
+						"updateAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "serchbyName",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:2700/api/test/getUserList?search=anand",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2700",
+					"path": [
+						"api",
+						"test",
+						"getUserList"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "anand"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findUsersPermission",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"userID\" :\"63f20e7bab7ae34c0416699b\" ,\r\n   \"access_module\" : \"delete\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:2700/api/test/checkUserAccess",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2700",
+					"path": [
+						"api",
+						"test",
+						"checkUserAccess"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
